@@ -15,6 +15,8 @@ I've used my experience tinkering with Kodi to plan my data structure (though Ko
 1. `composer install`
 2. `php artisan migrate --seed`
 3. I've left in the generic Laravel migrations
+4. Postman file found in root: Tris_SS.postman_collection.json
+4. DB EER png found in root root: DATA_EER.png
 
 ###api calls
 1. `api/v1/channels`
