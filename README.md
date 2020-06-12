@@ -31,6 +31,7 @@ I've used my experience tinkering with Kodi to plan my data structure (though Ko
 5. Schedule is a glorified pivot table that mirrors up a channel and a specific episode (with an air date based on last show ending and the duration), from which we can use eloquent relationships to ascertain and required data. (Seeder loops through channels, and adds random episode, with a 3 min gap after each show. )
 6. Calls are made to relevant Controllers and eloquent does its magic!
 7. Due to FAKER episode data, please use IDs generated from APi calls 1 and 2, to populate APi call No 3
+8. Iddeally, each returned Json would have a master node with key info, but for now, this is raw data
 
 ###Notes
 
