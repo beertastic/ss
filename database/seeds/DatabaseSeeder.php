@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             ChannelSeeder::class,
             ShowSeeder::class,
             EpisodeSeeder::class,
+            ScheduleSeeder::class,
         ]);
     }
 }

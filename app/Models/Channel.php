@@ -9,7 +9,7 @@ class Channel extends Model
 {
     use SoftDeletes;
 
-    public function shows()
+    public function shows(): object
     {
         return $this->hasMany(Show::class)->orderBy('name');
     }

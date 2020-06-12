@@ -15,11 +15,10 @@ class CreateScheduleTable extends Migration
     {
         Schema::create('schedule', function (Blueprint $table) {
             $table->id();
-            $table->integer('channel');
-            $table->integer('episode');
-            $table->date('airdate');
-            $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->string('uid');
+            $table->integer('channel_id');
+            $table->integer('episode_id');
+            $table->dateTime('airdate');
         });
     }
 
