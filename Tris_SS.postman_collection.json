@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "7e770ba5-56f7-43d8-9aee-f824a6b9a258",
+		"name": "Tris_SS",
+		"description": "Tris Pretty Postman calls for SimpleStream Api test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Channel list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/channels",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"channels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Program Timetable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/channels/chan001/2020-06-11/0",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"channels",
+						"chan001",
+						"2020-06-11",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Program info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/channels/chan001/programmes/5ee3357974268\n",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"channels",
+						"chan001",
+						"programmes",
+						"5ee3357974268\n"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
