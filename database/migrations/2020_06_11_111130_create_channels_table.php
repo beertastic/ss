@@ -18,7 +18,7 @@ class CreateChannelsTable extends Migration
             $table->string('uid');
             $table->string('name');
             $table->string('description');
-            $table->string('logo');
+            $table->string('icon');
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

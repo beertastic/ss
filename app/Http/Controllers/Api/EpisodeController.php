@@ -4,19 +4,11 @@ declare(strict_types = 1);
 
 namespace App\Http\Controllers\Api;
 
+use App\Abstracts\EpisodeAbstract;
 use App\Http\Controllers\Controller;
-use App\Models\Schedule;
 
 class EpisodeController extends Controller
 {
-    /**
-     * Construct not used yet, but added for future need and... well, habit.
-     */
-    public function __construct()
-    {
-        //
-    }
-
     /**
      * Fetch specific episode
      *
@@ -34,24 +26,12 @@ class EpisodeController extends Controller
      *
      * @return object
      */
-    public function get(string $cuid = null, string $puid): object
+    public function show(string $cuid = null, string $puid): object
     {
-        // Fetch schedule data, based on supplied uid
-        $schedule = Schedule::where('uid', $puid)->first();
-
-        // format data to match Api requirements
-        $return_array = [
-            'uid' => $puid,
-            'programme_name' => $schedule->episode->name,
-            'programme_description' => $schedule->episode->description,
-            'programme_thumbnail' => $schedule->episode->thumbnail,
-            'start_time' => $schedule->airdate,
-            'end_time' => date("Y-m-d H:i:s", (strtotime($schedule->airdate) + $schedule->episode->duration)),
-            'duration' => $schedule->episode->duration,
-            'channel' => $schedule->channel->name
-        ];
+        // prep data format
+        $episode = EpisodeAbstract::create($puid);
 
         // return json 200 response
-        return response()->json($return_array, 200);
+        return response()->json($episode, 200);
     }
 }
